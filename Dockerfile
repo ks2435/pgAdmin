@@ -15,6 +15,7 @@ RUN apt-get update && \
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir h11==0.16.0 httpcore==1.0.9 urllib3==2.6.3
 
 COPY . .
 RUN chown -R appuser:appgroup /app
